@@ -4,23 +4,34 @@
 
 :root {
   /* Swatches */
-  --light-100: #ffffff;
-  --light-200: #ebebeb;
-  --dark-800: #2f2b2d;
-  --dark-900: #1f1d1e;
-  --brand-500: #c6fb50;
-  --brand-text: var(--dark-900);
+  --light-100: #f3eee8;
+  --light-200: #e9e3dc;
+  --light-300: #d9d4ca;
+  --dark-700: #4c4747;
+  --dark-800: #312e2f;
+  --dark-900: #1c1a1a;
+  --brand-500: #a32e40;
+  --brand-red-dark: #7d202e;
+  --brand-green: #2f3e33;
+  --brand-green-light: #637768;
+  --brand-green-dark: #28302a;
+  --brand-pink: #efb7c9;
+  --brand-text: var(--light-100);
 
   /* Typography primitives */
-  --primary-family: system-ui, sans-serif;
+  --primary-family: "OT Jubilee Sapphire", system-ui, sans-serif;
   --primary-regular: 400;
   --primary-medium: 500;
   --primary-bold: 700;
   --primary-trim-top: 0.33em;
   --primary-trim-bottom: 0.38em;
 
+  --secondary-family: "Crimson Text", serif;
+  --secondary-regular: 400;
+
   --letter-spacing-tight: -0.03em;
   --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.1em;
 
   --line-height-small: 1;
   --line-height-medium: 1.1;
@@ -63,7 +74,7 @@
   --display-margin-top: var(--space-7);
   --display-margin-bottom: var(--space-6);
   --display-font-family: var(--primary-family);
-  --display-font-weight: var(--primary-medium);
+  --display-font-weight: var(--primary-regular);
   --display-trim-top: var(--primary-trim-top);
   --display-trim-bottom: var(--primary-trim-bottom);
   --display-text-wrap: balance;
@@ -140,14 +151,14 @@
 
   --h6: clamp(var(--h6-min) / 16 * 1rem, ((var(--h6-min) - ((var(--h6-max) - var(--h6-min)) / (var(--viewport-max) - var(--viewport-min)) * var(--viewport-min))) / 16 * 1rem + ((var(--h6-max) - var(--h6-min)) / (var(--viewport-max) - var(--viewport-min))) * 100vw), var(--h6-max) / 16 * 1rem);
   --h6-min: 16;
-  --h6-max: 18;
+  --h6-max: 16;
   --h6-line-height: var(--line-height-medium);
   --h6-letter-spacing: var(--letter-spacing-tight);
   --h6-text-transform: none;
   --h6-margin-top: var(--space-5);
   --h6-margin-bottom: var(--space-3);
-  --h6-font-family: var(--primary-family);
-  --h6-font-weight: var(--primary-medium);
+  --h6-font-family: var(--secondary-family);
+  --h6-font-weight: var(--secondary-regular);
   --h6-trim-top: var(--primary-trim-top);
   --h6-trim-bottom: var(--primary-trim-bottom);
   --h6-text-wrap: balance;
@@ -161,8 +172,8 @@
   --text-large-text-transform: none;
   --text-large-margin-top: var(--space-4);
   --text-large-margin-bottom: var(--space-4);
-  --text-large-font-family: var(--primary-family);
-  --text-large-font-weight: var(--primary-regular);
+  --text-large-font-family: var(--secondary-family);
+  --text-large-font-weight: var(--secondary-regular);
   --text-large-trim-top: var(--primary-trim-top);
   --text-large-trim-bottom: var(--primary-trim-bottom);
   --text-large-text-wrap: pretty;
@@ -175,25 +186,39 @@
   --text-main-text-transform: none;
   --text-main-margin-top: var(--space-4);
   --text-main-margin-bottom: var(--space-4);
-  --text-main-font-family: var(--primary-family);
-  --text-main-font-weight: var(--primary-regular);
+  --text-main-font-family: var(--secondary-family);
+  --text-main-font-weight: var(--secondary-regular);
   --text-main-trim-top: var(--primary-trim-top);
   --text-main-trim-bottom: var(--primary-trim-bottom);
   --text-main-text-wrap: pretty;
 
   --text-small: clamp(var(--text-small-min) / 16 * 1rem, ((var(--text-small-min) - ((var(--text-small-max) - var(--text-small-min)) / (var(--viewport-max) - var(--viewport-min)) * var(--viewport-min))) / 16 * 1rem + ((var(--text-small-max) - var(--text-small-min)) / (var(--viewport-max) - var(--viewport-min))) * 100vw), var(--text-small-max) / 16 * 1rem);
   --text-small-min: 14;
-  --text-small-max: 16;
+  --text-small-max: 14;
   --text-small-line-height: var(--line-height-huge);
   --text-small-letter-spacing: var(--letter-spacing-normal);
   --text-small-text-transform: none;
   --text-small-margin-top: var(--space-4);
   --text-small-margin-bottom: var(--space-4);
-  --text-small-font-family: var(--primary-family);
-  --text-small-font-weight: var(--primary-regular);
+  --text-small-font-family: var(--secondary-family);
+  --text-small-font-weight: var(--secondary-regular);
   --text-small-trim-top: var(--primary-trim-top);
   --text-small-trim-bottom: var(--primary-trim-bottom);
   --text-small-text-wrap: pretty;
+
+  --label: clamp(var(--label-min) / 16 * 1rem, ((var(--label-min) - ((var(--label-max) - var(--label-min)) / (var(--viewport-max) - var(--viewport-min)) * var(--viewport-min))) / 16 * 1rem + ((var(--label-max) - var(--label-min)) / (var(--viewport-max) - var(--viewport-min))) * 100vw), var(--label-max) / 16 * 1rem);
+  --label-min: 12;
+  --label-max: 12;
+  --label-line-height: var(--line-height-small);
+  --label-letter-spacing: var(--letter-spacing-wide);
+  --label-text-transform: uppercase;
+  --label-margin-top: var(--space-2);
+  --label-margin-bottom: var(--space-2);
+  --label-font-family: var(--secondary-family);
+  --label-font-weight: var(--secondary-regular);
+  --label-trim-top: var(--primary-trim-top);
+  --label-trim-bottom: var(--primary-trim-bottom);
+  --label-text-wrap: pretty;
 
   /* Site layout */
   --site-margin: clamp(var(--site-margin-min) / 16 * 1rem, ((var(--site-margin-min) - ((var(--site-margin-max) - var(--site-margin-min)) / (var(--viewport-max) - var(--viewport-min)) * var(--viewport-min))) / 16 * 1rem + ((var(--site-margin-max) - var(--site-margin-min)) / (var(--viewport-max) - var(--viewport-min))) * 100vw), var(--site-margin-max) / 16 * 1rem);
@@ -257,45 +282,13 @@
 .theme-brand .theme-invert {
   color-scheme: light;
 
-  --background: var(--light-200);
-  --background-2: var(--light-100);
+  --background: var(--light-100);
+  --background-2: var(--light-200);
   --background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
   --text: var(--dark-900);
+  --text-2: color-mix(in lab, var(--text) 70%, transparent);
   --border: color-mix(in lab, var(--text) 20%, transparent);
-  --heading-accent: color-mix(in srgb, var(--brand-500), black 20%);
-
-  --selection-background: var(--text);
-  --selection-text: var(--background);
-
-  --button-background: var(--brand-500);
-  --button-border: var(--button-background);
-  --button-text: var(--brand-text);
-  --button-background-hover: var(--text);
-  --button-border-hover: var(--button-background-hover);
-  --button-text-hover: var(--background);
-
-  --button-2-background: transparent;
-  --button-2-border: var(--border);
-  --button-2-text: var(--text);
-  --button-2-background-hover: var(--text);
-  --button-2-border-hover: var(--button-2-background-hover);
-  --button-2-text-hover: var(--background);
-
-  --link-text: var(--text);
-  --link-border: var(--border);
-  --link-text-hover: var(--text);
-  --link-border-hover: var(--brand-500);
-}
-
-.theme-dark,
-.theme-light .theme-invert {
-  color-scheme: dark;
-
-  --background: var(--dark-900);
-  --background-2: var(--dark-800);
-  --background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
-  --text: var(--light-100);
-  --border: color-mix(in lab, var(--text) 20%, transparent);
+  --border-2: var(--brand-pink);
   --heading-accent: var(--brand-500);
 
   --selection-background: var(--text);
@@ -318,25 +311,63 @@
   --link-text: var(--text);
   --link-border: var(--border);
   --link-text-hover: var(--text);
-  --link-border-hover: var(--text);
+  --link-border-hover: var(--border-2);
+}
+
+.theme-dark,
+.theme-light .theme-invert {
+  color-scheme: dark;
+
+  --background: var(--brand-green);
+  --background-2: var(--brand-green-dark);
+  --background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
+  --text: var(--light-100);
+  --text-2: color-mix(in lab, var(--text) 70%, transparent);
+  --border: color-mix(in lab, var(--text) 20%, transparent);
+  --border-2: var(--brand-green-light);
+  --heading-accent: var(--brand-pink);
+
+  --selection-background: var(--text);
+  --selection-text: var(--background);
+
+  --button-background: var(--brand-500);
+  --button-border: var(--button-background);
+  --button-text: var(--brand-text);
+  --button-background-hover: var(--text);
+  --button-border-hover: var(--button-background-hover);
+  --button-text-hover: var(--dark-900);
+
+  --button-2-background: transparent;
+  --button-2-border: var(--border);
+  --button-2-text: var(--text);
+  --button-2-background-hover: var(--brand-500);
+  --button-2-border-hover: var(--button-2-background-hover);
+  --button-2-text-hover: var(--brand-text);
+
+  --link-text: var(--text);
+  --link-border: var(--border);
+  --link-text-hover: var(--text);
+  --link-border-hover: var(--border-2);
 }
 
 .theme-brand {
   color-scheme: dark;
 
   --background: var(--brand-500);
-  --background-2: var(--brand-500);
+  --background-2: var(--brand-red-dark);
   --background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
   --text: var(--brand-text);
+  --text-2: color-mix(in lab, var(--text) 70%, transparent);
   --border: color-mix(in lab, var(--text) 20%, transparent);
-  --heading-accent: color-mix(in srgb, var(--text), white 20%);
+  --border-2: var(--brand-text);
+  --heading-accent: var(--brand-pink);
 
   --selection-background: var(--text);
   --selection-text: var(--background);
 
-  --button-background: var(--brand-text);
+  --button-background: var(--brand-pink);
   --button-border: var(--button-background);
-  --button-text: var(--background);
+  --button-text: var(--dark-900);
   --button-background-hover: var(--light-100);
   --button-border-hover: var(--button-background-hover);
   --button-text-hover: var(--dark-900);
@@ -509,6 +540,20 @@ body,
   --_trim-bottom: var(--text-small-trim-bottom);
   --_margin-top: var(--text-small-margin-top);
   --_margin-bottom: var(--text-small-margin-bottom);
+}
+
+.text-style-label {
+  font-family: var(--label-font-family);
+  font-size: var(--label);
+  font-weight: var(--label-font-weight);
+  line-height: var(--label-line-height);
+  letter-spacing: var(--label-letter-spacing);
+  text-transform: var(--label-text-transform);
+  text-wrap: var(--label-text-wrap);
+  --_trim-top: var(--label-trim-top);
+  --_trim-bottom: var(--label-trim-bottom);
+  --_margin-top: var(--label-margin-top);
+  --_margin-bottom: var(--label-margin-bottom);
 }
 
 .text-style-large {
